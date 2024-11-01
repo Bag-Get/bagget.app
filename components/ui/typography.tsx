@@ -7,7 +7,7 @@ export function Heading({size = 'h1', styles, children}: {size?: HEADING_SIZE; s
     if (size === 'h1') {
         return (
             <h1
-                className={`text-4xl font-bold text-gray-50 ${styles?.weight} ${styles?.style}`}
+                className={`text-4xl font-bold text-gray-50 ${styles?.weight} ${styles?.style} ${styles?.color}`}
             >
                 {children}
             </h1>
@@ -15,7 +15,7 @@ export function Heading({size = 'h1', styles, children}: {size?: HEADING_SIZE; s
     } else if (size === 'h2') {
         return (
             <h2
-                className={`text-xl text-gray-50 ${styles?.weight} ${styles?.style}`}
+                className={`text-xl text-gray-50 ${styles?.weight} ${styles?.style} ${styles?.color}`}
             >
                 {children}
             </h2>
@@ -23,7 +23,7 @@ export function Heading({size = 'h1', styles, children}: {size?: HEADING_SIZE; s
     } else if (size === 'h3') {
         return (
             <h3
-                className={`text-lg text-gray-50 ${styles?.weight} ${styles?.style}`}
+                className={`text-lg text-gray-50 ${styles?.weight} ${styles?.style} ${styles?.color}`}
             >
                 {children}
             </h3>
@@ -35,7 +35,7 @@ export function Text({size = 'sm', styles, children}: {size?: FONT_SIZE; styles?
     if (size === 'lg') {
         return (
             <h1
-                className={`text-lg font-normal text-gray-50 ${styles?.weight} ${styles?.style}`}
+                className={`text-lg text-gray-50 ${styles?.weight} ${styles?.style} ${styles?.color}`}
             >
                 {children}
             </h1>
@@ -43,7 +43,7 @@ export function Text({size = 'sm', styles, children}: {size?: FONT_SIZE; styles?
     } else if (size === 'md') {
         return (
             <h2
-                className={`text-md font-normal text-gray-50 ${styles?.weight} ${styles?.style}`}
+                className={`text-md text-gray-50 ${styles?.weight} ${styles?.style} ${styles?.color}`}
             >
                 {children}
             </h2>
@@ -51,7 +51,7 @@ export function Text({size = 'sm', styles, children}: {size?: FONT_SIZE; styles?
     } else if (size === 'sm') {
         return (
             <h3
-                className={`text-sm font-light text-gray-50 ${styles?.weight} ${styles?.style}`}
+                className={`text-sm text-gray-50 ${styles?.weight} ${styles?.style} ${styles?.color}`}
             >
                 {children}
             </h3>
