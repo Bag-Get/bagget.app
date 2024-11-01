@@ -1,25 +1,27 @@
 import { LINKS } from "@/data/types"
 
+// Navbar Links
+
 export const operationLinks: LINKS[] = [
     {
         name: "Dashboard",
         icon: "LayoutGrid",
-        link: ""
+        link: "/"
     },
     {
         name: "Reports",
         icon: "ChartColumnIncreasing",
-        link: ""
+        link: "/reports"
     },
     {
         name: "Distributions",
         icon: "Package",
-        link: ""
+        link: "/distributions"
     },
     {
         name: "Pantry Profile",
         icon: "Store",
-        link: ""
+        link: "/pantry-profile"
     }
 ]
 
@@ -27,17 +29,17 @@ export const peopleLinks: LINKS[] = [
     {
         name: "Clients",
         icon: "Users",
-        link: ""
+        link: "/clients"
     },
     {
         name: "Volunteers",
         icon: "HandHeart",
-        link: ""
+        link: "/volunteer"
     },
     {
         name: "Staff",
         icon: "ShieldCheck",
-        link: ""
+        link: "/staff"
     }
 ]
 
@@ -45,11 +47,13 @@ export const generalLinks: LINKS[] = [
     {
         name: "Settings",
         icon: "Settings",
-        link: ""
+        link: "/settings"
     },
     {
         name: "Accessibility",
         icon: "PersonStanding",
-        link: ""
+        link: "/accessibility"
     }
 ]
+
+// Quick Action Links
