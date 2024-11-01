@@ -1,73 +1,34 @@
-import { Separator } from "@/components/ui/separator";
-import { Heading, Text } from "@/components/ui/typography"
-import { IconText } from "@/components/ui/iconText"
-import { operationLinks, peopleLinks, generalLinks } from "@/data/navLinks"
+import { Heading } from "@/components/ui/typography"
+import { IconButton } from "@/components/ui/icons"
 
 export default function Home() {
+  
   return (
-    <div className="w-screen grid grid-cols-[400px_1fr] grid-rows-[75px_1fr]">
-      <nav className="h-screen row-span-2 bg-green-950 py-5 px-10">
-        <div className="pb-4">
-          <Heading>
-            Pantry A
-          </Heading>
-          <Text size="md">
-            Powered By Bag/Get
-          </Text>
+    <div className="grid grid-cols-2">
+      <section className="bg-sky-100 col-span-2 p-10 flex flex-col gap-4">
+        <Heading styles={{color: "text-gray-950"}}>
+          Quick Actions
+        </Heading>
+        <div className="flex gap-6">
+          {/* TODO: add redirect links to this and use a map to loop through static buttons */}
+          <IconButton icon="CalendarDays" style="alt" size="lg" align="right">
+            <Heading size="h2" styles={{weight: "font-semibold"}}>
+              Upcoming Distribution
+            </Heading>
+          </IconButton>
+          <IconButton icon="CalendarDays" size="lg" align="right" iconColor="#030712">
+            <Heading size="h2" styles={{color: "text-gray-950", weight: "font-semibold"}}>
+              Upcoming Distribution
+            </Heading>
+          </IconButton>
         </div>
-        <Separator />
-        <div className="py-10 flex flex-col gap-10">
-          <section className="flex flex-col gap-3">
-            <Heading size="h3" styles={{weight: 'font-thin'}}>
-              Operations
-            </Heading>
-            <div className="flex flex-col gap-4 justify-start items-start">
-              {operationLinks.map((operations, i) => (
-                <IconText icon={operations.icon} key={i}>
-                  <Heading size="h2" >
-                    {operations.name}
-                  </Heading>
-                </IconText>
-              ))}
-            </div>
-          </section>
-          <section className="flex flex-col gap-3">
-            <Heading size="h3" styles={{weight: 'font-thin'}}>
-              Your People
-            </Heading>
-            <div className="flex flex-col gap-4 justify-start items-start">
-              {peopleLinks.map((people, i) => (
-                <IconText icon={people.icon} key={i}>
-                  <Heading size="h2" >
-                    {people.name}
-                  </Heading>
-                </IconText>
-              ))}
-            </div>
-          </section>
-          <section className="flex flex-col gap-3">
-            <Heading size="h3" styles={{weight: 'font-thin'}}>
-              General
-            </Heading>
-            <div className="flex flex-col gap-4 justify-start items-start">
-              {generalLinks.map((general, i) => (
-                <IconText icon={general.icon} key={i}>
-                  <Heading size="h2" >
-                    {general.name}
-                  </Heading>
-                </IconText>
-              ))}
-            </div>
-          </section>
-        </div>
-        <Separator />
-      </nav>
-      <div className="bg-emerald-900">
-        <p>search bar</p>
-      </div>
-      <main className="flex flex-col gap-8 items-center sm:items-start">
-        <p>b!</p>
-      </main>
+      </section>
+      <section>
+        recent activities
+      </section>
+      <section>
+        upcoming
+      </section>
     </div>
   );
 }
