@@ -14,7 +14,8 @@ export type ICON_NAME = 'LayoutGrid' |
                         'CalendarDays' |
                         'CirclePlus' |
                         'Send' |
-                        'HeartHandshake'
+                        'HeartHandshake' |
+                        'CircleArrowRight'
 
 export type ALIGNMENT = 'left' | 
                         'right'
@@ -58,15 +59,38 @@ export interface STYLES {
             'text-gray-300' |
             'text-gray-800' |
             'text-gray-950' |
-            'text-yellow-200'
+            'text-yellow-200' |
+            'text-lime-100'
 }
 
-// REPORTS
+// Preview
 
-export interface PREVIEW {
+export interface IMPACT_PREVIEW {
     name: string;
     icon: ICON_NAME;
     num: number;
     // TODO: make date an actual DATE and calculate the time since this date
     date: number;
+}
+
+export type ALERT_TYPE = 'Client Account Merged' |
+                         'Create Client' |
+                         'New Volunteer' |
+                         'Client Account Updated' |
+                         'Volunteer Canceled' |
+                         'Distribution Approaching' |
+                         'Reports Generated' |
+                         'Reports Updated' |
+                         'Pantry Profile Updated' |
+                         'Distribution Created' |
+                         'Distribution Updated' 
+
+
+export interface ALERT_PREVIEW {
+    title: ALERT_TYPE;
+    icon: ICON_NAME;
+    preview: string;
+    link: string;
+    // TODO: make date an actual DATE and calculate the time since this date
+    date: string;
 }

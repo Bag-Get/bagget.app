@@ -3,14 +3,15 @@ import { Heading, Text } from "@/components/ui/typography"
 import { IconButton, Icons } from "@/components/ui/icons"
 import { quickActionLinks } from "@/data/links";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { impactPreview } from "@/data/reports"
-import { Button } from '@/components/ui/button';
+import { impactPreview, alertsPreview } from "@/data/previewData"
+import { CTA } from '@/components/ui/button';
+import { ALERT_PREVIEW } from '@/data/types';
 
 export default function Home() {
   
   return (
     <div className="grid grid-cols-2">
-      <section className="bg-sky-100 col-span-2 p-10 flex flex-col gap-4">
+      <section className="bg-sky-100 col-span-2 px-10 py-8 flex flex-col gap-4">
         <Heading styles={{color: "text-gray-950"}}>
           Quick Actions
         </Heading>
@@ -68,7 +69,7 @@ function YourImpact() {
       <Heading size='h2' styles={{color: "text-gray-800", weight: "font-medium"}}>
         Your Impact
       </Heading>
-      <div className='flex my-5 gap-5'>
+      <div className='flex my-2 gap-5'>
         {impactPreview.map((preview, i) => (
           <Card className="w-[350px] bg-blue-200" key={i}>
             <CardHeader>
@@ -100,21 +101,49 @@ function RecentAlerts() {
       <Heading size='h2' styles={{color: "text-gray-800", weight: "font-medium"}}>
         Recent Alerts
       </Heading>
-      <Card className="min-h-[200px] my-5">
-        <CardContent>
-          <div className='flex flex-col'>
-            
+      <Card className="min-h-[200px] my-2">
+        <CardContent className='my-5 max-h-[160px] overflow-y-scroll'>
+          <div className='flex flex-col gap-3'>
+            {alertsPreview.map((alert, i) => (
+              <AlertCard alertInfo={alert} key={i}/>
+            ))}
           </div>
         </CardContent>
         <CardFooter>
-          <Link href="/">
-            <Button className="w-max px-10 py-7 bg-gradient-to-r from-emerald-950 to-green-900 hover:from-emerald-800 hover:to-green-800">
-              Pluh
-            </Button>
+          <Link href="/" className='w-full'>
+            <CTA>
+              <Text size='lg' styles={{weight: 'font-medium', color: 'text-lime-100'}}>
+                View All Recent Activities
+              </Text>
+            </CTA>
           </Link>
         </CardFooter>
       </Card>
     </div>
     
+  )
+}
+
+function AlertCard({alertInfo}: {alertInfo: ALERT_PREVIEW}) {
+  return (
+    <Link href={alertInfo.link} className='p-5 flex justify-between items-center bg-blue-200 rounded-2xl'>
+      <div className='flex gap-3'>
+        <Icons name={alertInfo.icon} size='xl' color='#030712'/>
+        <div className='flex flex-col'>
+          <div className='flex items-center gap-4'>
+            <Heading size="h2" styles={{weight: "font-semibold", color: 'text-gray-950'}}>
+              {alertInfo.title}
+            </Heading>
+            <Text size='sm' styles={{color: "text-gray-800"}}>
+              {alertInfo.date}
+            </Text>
+          </div>
+          <Text size='md' styles={{color: "text-gray-800"}}>
+            {alertInfo.preview}
+          </Text>
+        </div>
+      </div>
+      <Icons name='CircleArrowRight' size='xl' color="#030712"/>
+    </Link>
   )
 }

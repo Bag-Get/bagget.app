@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Bell, CalendarDays, ChartColumnIncreasing, CirclePlus, HandHeart, HeartHandshake, LayoutGrid, Package, PersonStanding, Search, Send, Settings, ShieldCheck, Store, Users } from "lucide-react";
+import { Bell, CalendarDays, ChartColumnIncreasing, CircleArrowRight, CirclePlus, HandHeart, HeartHandshake, LayoutGrid, Package, PersonStanding, Search, Send, Settings, ShieldCheck, Store, Users } from "lucide-react";
 import { ALIGNMENT, BUTTON_STYLES, ICON_NAME, ICON_SIZE } from "@/data/types"
 
 export function IconText({align="left", size, icon, iconColor, children}: {size?: ICON_SIZE; align?: ALIGNMENT; icon: ICON_NAME; iconColor?: string; children: React.ReactNode}) {
@@ -96,6 +96,10 @@ export function Icons({name, size, color="#f9fafb"}: {name: ICON_NAME; size?: IC
     } else if (name === 'HeartHandshake') {
         return (
             <HeartHandshake color={color} style={iconSize}/>
+        )
+    } else if (name === 'CircleArrowRight') {
+        return (
+            <CircleArrowRight color={color} style={iconSize}/>
         )
     }
 }
