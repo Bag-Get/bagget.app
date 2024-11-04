@@ -11,7 +11,10 @@ export type ICON_NAME = 'LayoutGrid' |
                         'PersonStanding' | 
                         'Search' |
                         'Bell' |
-                        'CalendarDays'
+                        'CalendarDays' |
+                        'CirclePlus' |
+                        'Send' |
+                        'HeartHandshake'
 
 export type ALIGNMENT = 'left' | 
                         'right'
@@ -19,7 +22,8 @@ export type ALIGNMENT = 'left' |
 export type BUTTON_STYLES = 'default' |
                             'alt'
 
-export type ICON_SIZE = 'lg' | 
+export type ICON_SIZE = 'xl' |
+                        'lg' | 
                         'md'
 
 export interface LINKS {
@@ -52,6 +56,17 @@ export interface STYLES {
 
     color?: 'text-gray-50' | 
             'text-gray-300' |
+            'text-gray-800' |
             'text-gray-950' |
             'text-yellow-200'
+}
+
+// REPORTS
+
+export interface PREVIEW {
+    name: string;
+    icon: ICON_NAME;
+    num: number;
+    // TODO: make date an actual DATE and calculate the time since this date
+    date: number;
 }

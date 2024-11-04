@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { Heading, Text } from "@/components/ui/typography"
 import { IconButton, Icons } from "@/components/ui/icons"
 import { quickActionLinks } from "@/data/links";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { impactPreview } from "@/data/reports"
 
 export default function Home() {
   
@@ -13,11 +15,16 @@ export default function Home() {
         </Heading>
         <QuickActions />
       </section>
-      <section>
-        recent activities
+      <section className="p-10 flex flex-col gap-4">
+        <Heading styles={{color: "text-gray-950"}}>
+          Recent Activities
+        </Heading>
+        <YourImpact />
       </section>
-      <section>
-        upcoming
+      <section className="p-10 flex flex-col gap-4">
+        <Heading styles={{color: "text-gray-950"}}>
+          Upcoming
+        </Heading>
       </section>
     </div>
   );
@@ -53,3 +60,34 @@ function QuickActions() {
   )
 }
 
+function YourImpact() {
+  return(
+    <div>
+      <Heading size='h2' styles={{color: "text-gray-800", weight: "font-medium"}}>
+        Your Impact
+      </Heading>
+      <div className='flex my-5 gap-5'>
+        {impactPreview.map((preview, i) => (
+          <Card className="w-[350px] bg-blue-200" key={i}>
+            <CardHeader>
+              <CardTitle>{preview.name}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className='flex justify-between items-center '>
+                <div className='flex flex-col'>
+                  <Heading styles={{color: "text-gray-950"}}>
+                    {preview.num}
+                  </Heading>
+                  <Text size='md' styles={{color: "text-gray-800"}}>
+                    Since {preview.date} days
+                  </Text>
+                </div>
+                <Icons name={preview.icon} color="#1f2937" size='xl'/>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  )
+}

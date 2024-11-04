@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Bell, CalendarDays, ChartColumnIncreasing, HandHeart, LayoutGrid, Package, PersonStanding, Search, Settings, ShieldCheck, Store, Users } from "lucide-react";
+import { Bell, CalendarDays, ChartColumnIncreasing, CirclePlus, HandHeart, LayoutGrid, Package, PersonStanding, Search, Send, Settings, ShieldCheck, Store, Users } from "lucide-react";
 import { ALIGNMENT, BUTTON_STYLES, ICON_NAME, ICON_SIZE } from "@/data/types"
 
 export function IconText({align="left", size, icon, iconColor, children}: {size?: ICON_SIZE; align?: ALIGNMENT; icon: ICON_NAME; iconColor?: string; children: React.ReactNode}) {
@@ -27,8 +27,15 @@ export function IconButton({style="default", align="left", size, icon, iconColor
 export function Icons({name, size, color="#f9fafb"}: {name: ICON_NAME; size?: ICON_SIZE; color?: string}) {
 
     // TODO: there's gotta be a better way to write this
-    const iconSize = size === "lg" ? { width: '24px', height: '24px' } : size === "md" ? { width: '18px', height: '18px' } : undefined
+    let iconSize = undefined
 
+    if (size === 'xl') {
+        iconSize = { width: '48px', height: '48px' }
+    } else if (size === 'lg') {
+        iconSize = { width: '24px', height: '24px' }
+    } else if (size === 'md') {
+        iconSize = { width: '18px', height: '18px' }
+    }
 
     if (name === 'LayoutGrid') {
         return (
@@ -77,6 +84,18 @@ export function Icons({name, size, color="#f9fafb"}: {name: ICON_NAME; size?: IC
     } else if (name === 'CalendarDays') {
         return (
             <CalendarDays color={color} style={iconSize}/>
+        )
+    } else if (name === 'Send') {
+        return (
+            <Send color={color} style={iconSize}/>
+        )
+    } else if (name === 'CirclePlus') {
+        return (
+            <CirclePlus color={color} style={iconSize}/>
+        )
+    } else if (name === 'HeartHandshake') {
+        return (
+            <CirclePlus color={color} style={iconSize}/>
         )
     }
 }
