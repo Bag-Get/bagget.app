@@ -57,3 +57,26 @@ export const generalLinks: LINKS[] = [
 ]
 
 // Quick Action Links
+
+export const quickActionLinks: LINKS[] = [
+    {
+        name: "Upcoming Distribution",
+        icon: "CalendarDays",
+        link: "/"
+    },
+    {
+        name: "Create Client",
+        icon: "CirclePlus",
+        link: "/"
+    },
+    {
+        name: "Volunteer Shifts",
+        icon: "CalendarDays",
+        link: "/"
+    },
+    {
+        name: "Send Notification",
+        icon: "Send",
+        link: "/"
+    },
+]

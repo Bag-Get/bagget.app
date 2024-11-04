@@ -1,5 +1,7 @@
-import { Heading } from "@/components/ui/typography"
-import { IconButton } from "@/components/ui/icons"
+import Link from 'next/link'
+import { Heading, Text } from "@/components/ui/typography"
+import { IconButton, Icons } from "@/components/ui/icons"
+import { quickActionLinks } from "@/data/links";
 
 export default function Home() {
   
@@ -9,19 +11,7 @@ export default function Home() {
         <Heading styles={{color: "text-gray-950"}}>
           Quick Actions
         </Heading>
-        <div className="flex gap-6">
-          {/* TODO: add redirect links to this and use a map to loop through static buttons */}
-          <IconButton icon="CalendarDays" style="alt" size="lg" align="right">
-            <Heading size="h2" styles={{weight: "font-semibold"}}>
-              Upcoming Distribution
-            </Heading>
-          </IconButton>
-          <IconButton icon="CalendarDays" size="lg" align="right" iconColor="#030712">
-            <Heading size="h2" styles={{color: "text-gray-950", weight: "font-semibold"}}>
-              Upcoming Distribution
-            </Heading>
-          </IconButton>
-        </div>
+        <QuickActions />
       </section>
       <section>
         recent activities
@@ -32,3 +22,34 @@ export default function Home() {
     </div>
   );
 }
+
+function QuickActions() {
+  return(
+    <div className="flex gap-6">
+      {quickActionLinks.map((action, i) => {
+        if (i === 0) {
+          return (
+            <Link href={action.link} key={i}>
+              <IconButton icon={action.icon} style="alt" size="lg" align="right">
+                <Heading size="h2" styles={{weight: "font-semibold"}}>
+                  {action.name}
+                </Heading>
+              </IconButton>
+            </Link>
+          )
+        } else {
+          return (
+            <Link href={action.link} key={i}>
+              <IconButton icon={action.icon} size="lg" align="right" iconColor="#030712">
+                <Heading size="h2" styles={{color: "text-gray-950", weight: "font-semibold"}}>
+                  {action.name}
+                </Heading>
+              </IconButton>
+            </Link>
+          )
+        }
+      })}
+    </div>
+  )
+}
+
