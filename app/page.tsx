@@ -2,8 +2,9 @@ import Link from 'next/link'
 import { Heading, Text } from "@/components/ui/typography"
 import { IconButton, Icons } from "@/components/ui/icons"
 import { quickActionLinks } from "@/data/links";
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { impactPreview } from "@/data/reports"
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   
@@ -15,13 +16,14 @@ export default function Home() {
         </Heading>
         <QuickActions />
       </section>
-      <section className="p-10 flex flex-col gap-4">
+      <section className="px-10 py-8 flex flex-col gap-4">
         <Heading styles={{color: "text-gray-950"}}>
           Recent Activities
         </Heading>
         <YourImpact />
+        <RecentAlerts />
       </section>
-      <section className="p-10 flex flex-col gap-4">
+      <section className="px-10 py-8 flex flex-col gap-4">
         <Heading styles={{color: "text-gray-950"}}>
           Upcoming
         </Heading>
@@ -89,5 +91,30 @@ function YourImpact() {
         ))}
       </div>
     </div>
+  )
+}
+
+function RecentAlerts() {
+  return (
+    <div>
+      <Heading size='h2' styles={{color: "text-gray-800", weight: "font-medium"}}>
+        Recent Alerts
+      </Heading>
+      <Card className="min-h-[200px] my-5">
+        <CardContent>
+          <div className='flex flex-col'>
+            
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Link href="/">
+            <Button className="w-max px-10 py-7 bg-gradient-to-r from-emerald-950 to-green-900 hover:from-emerald-800 hover:to-green-800">
+              Pluh
+            </Button>
+          </Link>
+        </CardFooter>
+      </Card>
+    </div>
+    
   )
 }
