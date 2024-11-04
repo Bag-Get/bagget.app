@@ -54,3 +54,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 export { Button, buttonVariants }
+
+
+// CUSTOM BUTTON
+
+export function CTA({children}: {children: React.ReactNode}) {
+  return (
+    <Button className="w-full px-10 py-3 bg-gradient-to-r from-emerald-950 to-green-900 hover:from-emerald-800 hover:to-green-800">
+      {children}
+    </Button>
+  )
+}
