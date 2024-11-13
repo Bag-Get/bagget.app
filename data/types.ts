@@ -57,6 +57,7 @@ export interface STYLES {
 
     color?: 'text-gray-50' | 
             'text-gray-300' |
+            'text-gray-300 text-opacity-50' |
             'text-gray-800' |
             'text-gray-950' |
             'text-yellow-200' |
