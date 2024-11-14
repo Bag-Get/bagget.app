@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Bell, CalendarDays, ChartColumnIncreasing, CircleArrowRight, CirclePlus, HandHeart, HeartHandshake, LayoutGrid, Package, PersonStanding, Search, Send, Settings, ShieldCheck, Store, Users } from "lucide-react";
+import { Bell, CalendarDays, Car, ChartColumnIncreasing, CircleArrowRight, CircleCheck, CirclePlus, Clock, Footprints, HandHeart, HeartHandshake, LayoutGrid, MapPin, Package, PersonStanding, Repeat2, Search, Send, Settings, ShieldCheck, Sparkles, Store, Users, Warehouse } from "lucide-react";
 import { ALIGNMENT, BUTTON_STYLES, ICON_NAME, ICON_SIZE } from "@/data/types"
 
 export function IconText({align="left", size, icon, iconColor, children}: {size?: ICON_SIZE; align?: ALIGNMENT; icon: ICON_NAME; iconColor?: string; children: React.ReactNode}) {
@@ -37,69 +37,126 @@ export function Icons({name, size, color="#f9fafb"}: {name: ICON_NAME; size?: IC
         iconSize = { width: '18px', height: '18px' }
     }
 
+    // Nav Icons
+    // dashboard
     if (name === 'LayoutGrid') {
         return (
             <LayoutGrid color={color} style={iconSize}/>
         )
+    // reports
     } else if (name === 'ChartColumnIncreasing') {
         return (
             <ChartColumnIncreasing color={color} style={iconSize}/>
         )
+    // distributions
     } else if (name === 'Package') {
         return (
             <Package color={color} style={iconSize}/>
         )
+    // pantry profile
     } else if (name === 'Store') {
         return (
             <Store color={color} style={iconSize}/>
         )
+    // clients
     } else if (name === 'Users') {
         return (
             <Users color={color} style={iconSize}/>
         )
+    // volunteers
     } else if (name === 'HandHeart') {
         return (
             <HandHeart color={color} style={iconSize}/>
         )
+    // staff
     } else if (name === 'ShieldCheck') {
         return (
             <ShieldCheck color={color} style={iconSize}/>
         )
+    // settings
     } else if (name === 'Settings') {
         return (
             <Settings color={color} style={iconSize}/>
         )
+    // accessibility a11y
     } else if (name === 'PersonStanding') {
         return (
             <PersonStanding color={color} style={iconSize}/>
         )
+    // search
     } else if (name === 'Search') {
         return (
             <Search color={color} style={iconSize}/>
         )
+    // notification
     } else if (name === 'Bell') {
         return (
             <Bell color={color} style={iconSize}/>
         )
+    // Calendar
     } else if (name === 'CalendarDays') {
         return (
             <CalendarDays color={color} style={iconSize}/>
         )
+    // Arrow send
     } else if (name === 'Send') {
         return (
             <Send color={color} style={iconSize}/>
         )
+    // plus
     } else if (name === 'CirclePlus') {
         return (
             <CirclePlus color={color} style={iconSize}/>
         )
+    // heart hand
     } else if (name === 'HeartHandshake') {
         return (
             <HeartHandshake color={color} style={iconSize}/>
         )
+    // arrow circle
     } else if (name === 'CircleArrowRight') {
         return (
             <CircleArrowRight color={color} style={iconSize}/>
+        )
+    // arrow circle
+    } else if (name === 'Repeat2') {
+        return (
+            <Repeat2 color={color} style={iconSize}/>
+        )
+    // location
+    } else if (name === 'MapPin') {
+        return (
+            <MapPin color={color} style={iconSize}/>
+        )
+    // time
+    } else if (name === 'Clock') {
+        return (
+            <Clock color={color} style={iconSize}/>
+        )
+    // confirm
+    } else if (name === 'CircleCheck') {
+        return (
+            <CircleCheck color={color} style={iconSize}/>
+        )
+    // walk-in
+    } else if (name === 'Footprints') {
+        return (
+            <Footprints color={color} style={iconSize}/>
+        )
+    // car
+    } else if (name === 'Car') {
+        return (
+            <Car color={color} style={iconSize}/>
+        )
+    // bank
+    } else if (name === 'Warehouse') {
+        return (
+            <Warehouse color={color} style={iconSize}/>
+        )
+    // pop up special
+    } else if (name === 'Sparkles') {
+        return (
+            <Sparkles color={color} style={iconSize}/>
         )
     }
 }

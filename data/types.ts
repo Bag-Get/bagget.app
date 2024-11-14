@@ -15,7 +15,15 @@ export type ICON_NAME = 'LayoutGrid' |
                         'CirclePlus' |
                         'Send' |
                         'HeartHandshake' |
-                        'CircleArrowRight'
+                        'CircleArrowRight' |
+                        'Repeat2' |
+                        'MapPin' |
+                        'Clock' |
+                        'CircleCheck' |
+                        'Footprints' |
+                        'Car' |
+                        'Warehouse' |
+                        'Sparkles'
 
 export type ALIGNMENT = 'left' | 
                         'right'
@@ -94,4 +102,28 @@ export interface ALERT_PREVIEW {
     link: string;
     // TODO: make date an actual DATE and calculate the time since this date
     date: string;
+}
+
+// Distribution 
+export type DISTRIBUTION_TYPE = "Mobile" | "Bank" | "Pop-Up" | "Pantry"
+
+export type DISTRIBUTION_TYPE_ICONS = {
+    [NAME in DISTRIBUTION_TYPE]: ICON_NAME;
+};
+
+export interface DISTRIBUTION {
+    pantry: string;
+    type: DISTRIBUTION_TYPE;
+    isReoccurring: boolean;
+    address: string;
+    date: Date;
+    startTime: string;
+    endTime: string;
+    volunteers: number;
+    confirmedVisits: number;
+    walkInSlots: number;
+    // account for:
+    // past visits
+    // users
+    // volunteers
 }

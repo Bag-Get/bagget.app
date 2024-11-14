@@ -1,21 +1,10 @@
+import { DISTRIBUTION, DISTRIBUTION_TYPE_ICONS } from "./types";
 
-type DISTRIBUTION_TYPE = "Mobile" | "Bank" | "Pop-Up" | "Pantry"
-
-export interface DISTRIBUTION {
-    pantry: string;
-    type: DISTRIBUTION_TYPE;
-    isReoccurring: boolean;
-    address: string;
-    date: Date;
-    startTime: string;
-    endTime: string;
-    volunteers: number;
-    confirmedVisits: number;
-    walkInSlots: number;
-    // account for:
-    // past visits
-    // users
-    // volunteers
+export const distributionTypeIcons: DISTRIBUTION_TYPE_ICONS = {
+    Mobile: "Car",
+    Bank: "Warehouse",
+    "Pop-Up": "Sparkles",
+    Pantry: "Store"
 }
 
 export const distributions: DISTRIBUTION[] = [
