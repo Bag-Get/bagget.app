@@ -3,6 +3,7 @@ import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import { CTA_STYLE, CTA_STYLES } from "@/data/types"
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
@@ -58,9 +59,16 @@ export { Button, buttonVariants }
 
 // CUSTOM BUTTON
 
-export function CTA({children}: {children: React.ReactNode}) {
+export function CTA({style="w_b_dark", children}: {style?: CTA_STYLES; children: React.ReactNode}) {
+
+  const styles: CTA_STYLE = {
+    "w_b_dark": "w-full px-10 py-3 bg-gradient-to-r from-emerald-950 to-green-900 hover:from-emerald-800 hover:to-green-800 rounded-2xl",
+    "d_b_dark": "w-full px-10 py-3 bg-gradient-to-r from-emerald-800 to-green-900 hover:from-emerald-800 hover:to-green-800 rounded-2xl",
+    "light": "w-full px-10 py-3 bg-lime-100 hover:bg-emerald-100 rounded-2xl"
+  }
+
   return (
-    <Button className="w-full px-10 py-3 bg-gradient-to-r from-emerald-950 to-green-900 hover:from-emerald-800 hover:to-green-800">
+    <Button className={styles[style]}>
       {children}
     </Button>
   )

@@ -23,7 +23,8 @@ export type ICON_NAME = 'LayoutGrid' |
                         'Footprints' |
                         'Car' |
                         'Warehouse' |
-                        'Sparkles'
+                        'Sparkles' |
+                        'SlidersHorizontal'
 
 export type ALIGNMENT = 'left' | 
                         'right'
@@ -71,6 +72,16 @@ export interface STYLES {
             'text-yellow-200' |
             'text-lime-100'
 }
+
+// CTA button
+
+export type CTA_STYLES = "w_b_dark" | 
+                  "d_b_dark" | 
+                  "light"
+
+export type CTA_STYLE = {
+    [NAME in CTA_STYLES]: string;
+};
 
 // Preview
 

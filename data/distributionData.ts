@@ -25,7 +25,7 @@ export const distributions: DISTRIBUTION[] = [
         type: "Pantry",
         isReoccurring: false,
         address: "1234 Test St\, CA\, 92701",
-        date: new Date(),
+        date: new Date(2024, 1, 15),
         startTime: "10:00am",
         endTime: "1:00pm",
         volunteers: 3,

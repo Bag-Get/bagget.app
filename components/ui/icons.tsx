@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Bell, CalendarDays, Car, ChartColumnIncreasing, CircleArrowRight, CircleCheck, CirclePlus, Clock, Footprints, HandHeart, HeartHandshake, LayoutGrid, MapPin, Package, PersonStanding, Repeat2, Search, Send, Settings, ShieldCheck, Sparkles, Store, Users, Warehouse } from "lucide-react";
+import { Bell, CalendarDays, Car, ChartColumnIncreasing, CircleArrowRight, CircleCheck, CirclePlus, Clock, Footprints, HandHeart, HeartHandshake, LayoutGrid, MapPin, Package, PersonStanding, Repeat2, Search, Send, Settings, ShieldCheck, SlidersHorizontal, Sparkles, Store, Users, Warehouse } from "lucide-react";
 import { ALIGNMENT, BUTTON_STYLES, ICON_NAME, ICON_SIZE } from "@/data/types"
 
 export function IconText({align="left", size, icon, iconColor, children}: {size?: ICON_SIZE; align?: ALIGNMENT; icon: ICON_NAME; iconColor?: string; children: React.ReactNode}) {
@@ -157,6 +157,11 @@ export function Icons({name, size, color="#f9fafb"}: {name: ICON_NAME; size?: IC
     } else if (name === 'Sparkles') {
         return (
             <Sparkles color={color} style={iconSize}/>
+        )
+    // Filter
+    } else if (name === 'SlidersHorizontal') {
+        return (
+            <SlidersHorizontal color={color} style={iconSize}/>
         )
     }
 }

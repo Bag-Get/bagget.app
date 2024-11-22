@@ -34,14 +34,14 @@ export function NavBar() {
             <Separator />
             <div className="py-10 flex flex-col gap-10">
               <section className="flex flex-col gap-3">
-                <Text size="md" styles={{weight: 'font-thin'}}>
+                <Text size="sm" styles={{weight: 'font-thin'}}>
                   Operations
                 </Text>
                 <div className="flex flex-col gap-4 justify-start items-start">
                   {operationLinks.map((operations, i) => (
                     <Link href={operations.link} key={i}>
                         <IconText icon={operations.icon} iconColor={path === operations.link ? '#fde68a' : undefined}>
-                            <Heading size="h2" styles={path === operations.link ? {color: `text-yellow-200`} : undefined}> 
+                            <Heading size="h3" styles={path === operations.link ? {color: `text-yellow-200`} : undefined}> 
                                 {operations.name}
                             </Heading>
                         </IconText>
@@ -50,14 +50,14 @@ export function NavBar() {
                 </div>
               </section>
               <section className="flex flex-col gap-3">
-                <Text size="md" styles={{weight: 'font-thin'}}>
+                <Text size="sm" styles={{weight: 'font-thin'}}>
                   Your People
                 </Text>
                 <div className="flex flex-col gap-4 justify-start items-start">
                   {peopleLinks.map((people, i) => (
                     <Link href={people.link} key={i}>
                         <IconText icon={people.icon} iconColor={path === people.link ? '#fde68a' : undefined}>
-                            <Heading size="h2" styles={path === people.link ? {color: `text-yellow-200`} : undefined}>
+                            <Heading size="h3" styles={path === people.link ? {color: `text-yellow-200`} : undefined}>
                                 {people.name}
                             </Heading>
                         </IconText>
@@ -66,14 +66,14 @@ export function NavBar() {
                 </div>
               </section>
               <section className="flex flex-col gap-3">
-                <Text size="md" styles={{weight: 'font-thin'}}>
+                <Text size="sm" styles={{weight: 'font-thin'}}>
                   General
                 </Text>
                 <div className="flex flex-col gap-4 justify-start items-start">
                   {generalLinks.map((general, i) => (
                     <Link href={general.link} key={i}>
                         <IconText icon={general.icon} iconColor={path === general.link ? '#fde68a' : undefined}>
-                            <Heading size="h2" styles={path === general.link ? {color: `text-yellow-200`} : undefined}>
+                            <Heading size="h3" styles={path === general.link ? {color: `text-yellow-200`} : undefined}>
                                 {general.name}
                             </Heading>
                         </IconText>
@@ -84,7 +84,7 @@ export function NavBar() {
             </div>
             <Separator />
             <div className="py-10 flex flex-col gap-6">
-              <Text size="md">
+              <Text size="sm">
                 Welcome back,
               </Text>
               <div className="flex justify-start items-center gap-3">
@@ -93,10 +93,10 @@ export function NavBar() {
                   <AvatarFallback>{userInitials}</AvatarFallback>
                 </Avatar>
                 <div>
-                  <Text size="lg" styles={{weight: "font-medium"}}>
+                  <Text size="md" styles={{weight: "font-medium"}}>
                     {user.userName}
                   </Text>
-                  <Text size="md" styles={{weight: "font-light", color: "text-gray-300"}}>
+                  <Text size="sm" styles={{weight: "font-light", color: "text-gray-300"}}>
                     {user.email}
                   </Text>
                 </div>
