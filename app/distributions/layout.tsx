@@ -11,8 +11,8 @@ export default function DistributionsLayout({
 }>) {
 
   return (
-    <div className="flex flex-col">
-        <div className="bg-emerald-900 p-6 flex w-full justify-between items-center">
+    <main className="flex-1 flex flex-col">
+        <div className="bg-emerald-900 h-32 p-6 flex w-full justify-between items-center">
             <div className="flex flex-col gap-5">
                 <Heading styles={{weight: "font-semibold"}}>
                     Distributions
@@ -39,6 +39,6 @@ export default function DistributionsLayout({
             </Link>
         </div>
         {children}
-    </div>
+    </main>
   );
 }

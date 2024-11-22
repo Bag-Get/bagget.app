@@ -62,18 +62,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="w-screen grid grid-cols-[400px_1fr] grid-rows-[auto_1fr]">
+        <div className="w-screen grid grid-cols-[300px_auto] grid-rows-[96px_auto]">
           <NavBar />
-          <div className="bg-emerald-900 p-6 flex justify-end gap-6">
+          <div className="bg-emerald-900 p-6 flex justify-end items-center gap-6 h-24">
             <div className="w-96 flex gap-4">
               <Input type="search" placeholder="Navigate Bag/Get" />
               <Button type="submit" className="bg-lime-100 hover:bg-emerald-100"><Icons name="Search" color="#030712"/></Button>
             </div>
             <Button type="submit" className="bg-lime-100 hover:bg-emerald-100"><Icons name="Bell" color="#030712"/></Button>
           </div>
-          <main className="h-full w-full">
-            {children}
-          </main>
+          {children}
         </div>
       </body>
     </html>
