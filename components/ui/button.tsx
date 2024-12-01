@@ -1,4 +1,5 @@
 import * as React from "react"
+import Link from 'next/link'
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -59,7 +60,7 @@ export { Button, buttonVariants }
 
 // CUSTOM BUTTON
 
-export function CTA({style="w_b_dark", children}: {style?: CTA_STYLES; children: React.ReactNode}) {
+export function CTA({style="w_b_dark", redirect, children}: {style?: CTA_STYLES; redirect: string; children: React.ReactNode}) {
 
   const styles: CTA_STYLE = {
     "w_b_dark": "w-full px-10 py-3 bg-gradient-to-r from-emerald-950 to-green-900 hover:from-emerald-800 hover:to-green-800 rounded-2xl",
@@ -68,8 +69,10 @@ export function CTA({style="w_b_dark", children}: {style?: CTA_STYLES; children:
   }
 
   return (
-    <Button className={styles[style]}>
-      {children}
-    </Button>
+    <Link href={redirect} className='w-full'>
+      <Button className={styles[style]}>
+        {children}
+      </Button> 
+    </Link>
   )
 }
