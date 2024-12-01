@@ -1,6 +1,9 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { Heading, Text } from "./typography"
+import { IMPACT_PREVIEW } from "@/data/types"
+import { Icons } from "./icons"
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -76,4 +79,41 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = "CardFooter"
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+
+function ImpactCard({impactMetrics, showDate=true}: {impactMetrics: IMPACT_PREVIEW[], showDate?: boolean}) {
+  return(
+    <div>
+      <Heading size='h2' styles={{color: "text-gray-800", weight: "font-medium"}}>
+        Your Impact
+      </Heading>
+      <div className='flex my-2 gap-5'>
+        {impactMetrics.map((preview, i) => (
+          <Card className="w-[350px] bg-blue-200" key={i}>
+            <CardHeader>
+              <CardTitle>{preview.name}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className='flex justify-between items-center '>
+                <div className='flex flex-col'>
+                  <Heading styles={{color: "text-gray-950"}}>
+                    {preview.num}
+                  </Heading>
+                  {showDate && 
+                    <Text size='md' styles={{color: "text-gray-800"}}>
+                      Since {preview.date} days
+                    </Text>
+                  }
+                </div>
+                <Icons name={preview.icon} color="#1f2937" size='xl'/>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent, ImpactCard }
