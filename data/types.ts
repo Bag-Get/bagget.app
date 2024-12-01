@@ -24,7 +24,9 @@ export type ICON_NAME = 'LayoutGrid' |
                         'Car' |
                         'Warehouse' |
                         'Sparkles' |
-                        'SlidersHorizontal'
+                        'SlidersHorizontal' |
+                        'House' | 
+                        'CircleArrowLeft'
 
 export type ALIGNMENT = 'left' | 
                         'right'
@@ -123,6 +125,7 @@ export type DISTRIBUTION_TYPE_ICONS = {
 };
 
 export interface DISTRIBUTION {
+    id: string;
     pantry: string;
     type: DISTRIBUTION_TYPE;
     isReoccurring: boolean;
@@ -133,6 +136,8 @@ export interface DISTRIBUTION {
     volunteers: number;
     confirmedVisits: number;
     walkInSlots: number;
+    peopleServed: number | 0;
+    householdServed: number | 0;
     // account for:
     // past visits
     // users
