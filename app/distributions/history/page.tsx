@@ -8,9 +8,8 @@ import { DISTRIBUTION_TYPE } from "@/data/types";
 import { Input } from "@/components/ui/input";
 import { DateFormat } from "@/components/utility/dateFormat"
 
-export default function Distributions() {
-
-    return (
+export default function DistributionHistory() {
+    return(
         <section className="h-[calc(100vh-8rem-96px)] overflow-y-scroll flex flex-col px-10 py-8 gap-4 relative">
             <div className="w-96 flex gap-4">
               <Input type="search" placeholder="Find Distribution" />
@@ -20,7 +19,7 @@ export default function Distributions() {
             <DistributionCard />
             <div className="bg-gradient-to-t from-gray-50 to-transparent absolute h-10 w-[calc(100%-5rem)] bottom-[32px]" />
         </section>
-    );
+    )
 }
 
 
@@ -36,7 +35,7 @@ function DistributionCard() {
     return (
         <div className="flex flex-col gap-4 overflow-y-scroll">
             {distributions.map((distribution, i) => (
-                <Card className={i === 0 ? "bg-gradient-to-r from-emerald-950 to-green-900 shadow-lg" : "shadow-lg"} key={i}>
+                <Card className="shadow-lg" key={i}>
                     <CardHeader>
                         <CardTitle>
                             <div className="flex flex-col gap-5">
@@ -50,8 +49,8 @@ function DistributionCard() {
                                     </div>
                                 }
                                 <div className="flex gap-5 items-center">
-                                    <DateFormat date={distribution.date} isDark={i === 0 ? false : true} isHeading />
-                                    <Heading size="h2" styles={i === 0 ? {weight: 'font-semibold'} : {weight: 'font-semibold', color: "text-gray-950"}}>
+                                    <DateFormat date={distribution.date} isDark isHeading />
+                                    <Heading size="h2" styles={{weight: 'font-semibold', color: "text-gray-950"}}>
                                         {distribution.pantry}
                                     </Heading>
                                 </div>
@@ -61,24 +60,24 @@ function DistributionCard() {
                     <CardContent>
                         <div className="flex flex-col gap-5">
                             <div className="flex gap-10 w-8/12">
-                                <IconText icon="MapPin" iconColor={i === 0 ? "#f9fafb" : "#030712"}>
-                                    <Text size='lg' styles={i === 0 ? {weight: 'font-medium'} : {weight: 'font-medium', color: "text-gray-950"}}>
+                                <IconText icon="MapPin" iconColor={"#030712"}>
+                                    <Text size='lg' styles={{weight: 'font-medium', color: "text-gray-950"}}>
                                     {distribution.address}
                                     </Text>
                                 </IconText>
-                                <IconText icon={DistributionType(distribution.type)} iconColor={i === 0 ? "#f9fafb" : "#030712"}>
-                                    <Text size='lg' styles={i === 0 ? {weight: 'font-medium'} : {weight: 'font-medium', color: "text-gray-950"}}>
+                                <IconText icon={DistributionType(distribution.type)} iconColor={"#030712"}>
+                                    <Text size='lg' styles={{weight: 'font-medium', color: "text-gray-950"}}>
                                     {distribution.type}
                                     </Text>
                                 </IconText>
-                                <IconText icon="Bell" iconColor={i === 0 ? "#f9fafb" : "#030712"}>
+                                <IconText icon="Bell" iconColor={"#030712"}>
                                     <div className="flex gap-2 items-center">
                                         <div className="bg-blue-200 w-fit py-1 px-3 rounded-3xl">
                                             <Text size='lg' styles={{weight: 'font-medium', color: "text-gray-950"}}>
                                                 {distribution.startTime}
                                             </Text>
                                         </div>
-                                            <Text size='lg' styles={i === 0 ? {weight: 'font-medium'} : {weight: 'font-medium', color: "text-gray-950"}}>
+                                            <Text size='lg' styles={{weight: 'font-medium', color: "text-gray-950"}}>
                                                 to {' '}
                                             </Text>
                                         <div className="bg-blue-200 w-fit py-1 px-3 rounded-3xl">
@@ -91,19 +90,19 @@ function DistributionCard() {
                                 </IconText>
                             </div>
                             <div className="flex gap-10">
-                                <IconText icon="HandHeart" iconColor={i === 0 ? "#f9fafb" : "#030712"}>
-                                    <Text size='lg' styles={i === 0 ? {weight: 'font-medium'} : {weight: 'font-medium', color: "text-gray-950"}}>
-                                    {distribution.volunteers} volunteers
+                                <IconText icon="HandHeart" iconColor={"#030712"}>
+                                    <Text size='lg' styles={{weight: 'font-medium', color: "text-gray-950"}}>
+                                    {distribution.volunteers} people volunteered
                                     </Text>
                                 </IconText>
-                                <IconText icon="CircleCheck" iconColor={i === 0 ? "#f9fafb" : "#030712"}>
-                                    <Text size='lg' styles={i === 0 ? {weight: 'font-medium'} : {weight: 'font-medium', color: "text-gray-950"}}>
-                                    {distribution.confirmedVisits} confirmed neighbors
+                                <IconText icon="Users" iconColor={"#030712"}>
+                                    <Text size='lg' styles={{weight: 'font-medium', color: "text-gray-950"}}>
+                                    {distribution.peopleServed} people served
                                     </Text>
                                 </IconText>
-                                <IconText icon="Footprints" iconColor={i === 0 ? "#f9fafb" : "#030712"}>
-                                    <Text size='lg' styles={i === 0 ? {weight: 'font-medium'} : {weight: 'font-medium', color: "text-gray-950"}}>
-                                    {distribution.walkInSlots} available walk-in slots
+                                <IconText icon="House" iconColor={"#030712"}>
+                                    <Text size='lg' styles={{weight: 'font-medium', color: "text-gray-950"}}>
+                                    {distribution.householdServed} households served
                                     </Text>
                                 </IconText>
                             </div>
@@ -134,4 +133,3 @@ function DistributionCard() {
         </div>
     )
 }
-
