@@ -3,10 +3,11 @@
 import React from "react";
 import { Heading } from "@/components/ui/typography"
 import Link from "next/link";
-import { IconButton } from "@/components/ui/icons";
+import { IconButton, Icons } from "@/components/ui/icons";
 import { notFound, usePathname } from 'next/navigation'
 import { distributions } from "@/data/distributionData";
 import { DateFormat } from "@/components/utility/dateFormat";
+import { CTA } from "@/components/ui/button";
 
 
 export default function DistributionsLayout({
@@ -55,13 +56,28 @@ export default function DistributionsLayout({
                     </Link>
                 </div>
             </div>
-            <Link href="/">
-              <IconButton icon="CirclePlus" size="lg" align="right" iconColor="#030712">
-                <Heading size="h2" styles={{color: "text-gray-950", weight: "font-semibold"}}>
-                  Create
-                </Heading>
-              </IconButton>
-            </Link>
+            {pathname === "/distributions" || pathname === "/distributions/history" ? 
+                <Link href="/">
+                  <IconButton icon="CirclePlus" size="lg" align="right" iconColor="#030712">
+                    <Heading size="h2" styles={{color: "text-gray-950", weight: "font-semibold"}}>
+                      Create
+                    </Heading>
+                  </IconButton>
+                </Link>
+              : 
+              <div className="flex gap-5 items-center">
+                  <CTA redirect="/" style="light-big">
+                    <Heading size="h2" styles={{color: "text-gray-950", weight: "font-semibold"}}>
+                      Start Distribution
+                    </Heading>
+                  </CTA>
+                  <CTA redirect="/" style="light-border">
+                    <Icons name="Pencil" color="#ecfccb" size='lg'/>
+                  </CTA>
+                </div>
+              
+            }
+            
         </div>
         {children}
     </main>

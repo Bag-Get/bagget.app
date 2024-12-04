@@ -26,7 +26,8 @@ export type ICON_NAME = 'LayoutGrid' |
                         'Sparkles' |
                         'SlidersHorizontal' |
                         'House' | 
-                        'CircleArrowLeft'
+                        'CircleArrowLeft' |
+                        'Pencil'
 
 export type ALIGNMENT = 'left' | 
                         'right'
@@ -79,7 +80,9 @@ export interface STYLES {
 
 export type CTA_STYLES = "w_b_dark" | 
                   "d_b_dark" | 
-                  "light"
+                  "light" |
+                  "light-big" |
+                  "light-border"
 
 export type CTA_STYLE = {
     [NAME in CTA_STYLES]: string;
