@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Bell, CalendarDays, Car, ChartColumnIncreasing, CircleArrowLeft, CircleArrowRight, CircleCheck, CirclePlus, Clock, Footprints, HandHeart, HeartHandshake, House, LayoutGrid, MapPin, Package, PersonStanding, Repeat2, Search, Send, Settings, ShieldCheck, SlidersHorizontal, Sparkles, Store, Users, Warehouse } from "lucide-react";
+import { Bell, CalendarDays, Car, ChartColumnIncreasing, CircleArrowLeft, CircleArrowRight, CircleCheck, CirclePlus, Clock, Footprints, HandHeart, HeartHandshake, House, LayoutGrid, MapPin, Package, Pencil, PersonStanding, Repeat2, Search, Send, Settings, ShieldCheck, SlidersHorizontal, Sparkles, Store, Users, Warehouse } from "lucide-react";
 import { ALIGNMENT, BUTTON_STYLES, ICON_NAME, ICON_SIZE } from "@/data/types"
 
 export function IconText({align="left", size, icon, iconColor, children}: {size?: ICON_SIZE; align?: ALIGNMENT; icon: ICON_NAME; iconColor?: string; children: React.ReactNode}) {
@@ -172,6 +172,11 @@ export function Icons({name, size, color="#f9fafb"}: {name: ICON_NAME; size?: IC
     } else if (name === 'CircleArrowLeft') {
         return (
             <CircleArrowLeft color={color} style={iconSize}/>
+        )
+    // edit pencil
+    } else if (name === 'Pencil') {
+        return (
+            <Pencil color={color} style={iconSize}/>
         )
     // 
     }

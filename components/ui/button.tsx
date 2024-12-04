@@ -65,7 +65,9 @@ export function CTA({style="w_b_dark", redirect, children}: {style?: CTA_STYLES;
   const styles: CTA_STYLE = {
     "w_b_dark": "w-full px-10 py-3 bg-gradient-to-r from-emerald-950 to-green-900 hover:from-emerald-800 hover:to-green-800 rounded-2xl",
     "d_b_dark": "w-full px-10 py-3 bg-gradient-to-r from-emerald-800 to-green-900 hover:from-emerald-800 hover:to-green-800 rounded-2xl",
-    "light": "w-full px-10 py-3 bg-lime-100 hover:bg-emerald-100 rounded-2xl"
+    "light": "w-full px-10 py-3 bg-lime-100 hover:bg-emerald-100 rounded-2xl",
+    "light-big": "w-full px-8 py-7 bg-lime-100 hover:bg-emerald-100 rounded-3xl",
+    "light-border" : "transition-all w-full px-4 py-6 ring-4 bg-transparent ring-lime-100 rounded-lg hover:rounded-3xl hover:bg-transparent ease-in-out duration-300"
   }
 
   return (
