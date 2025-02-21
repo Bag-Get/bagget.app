@@ -2,7 +2,7 @@ import React from "react";
 import { Heading } from "@/components/ui/typography"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ImpactCard } from "@/components/ui/card";
-import { reportsPreview } from "@/data/previewData";
+import { reportsPreview } from "@/data/testData/previewData";
 
 export default function Reports() {
 

@@ -1,9 +1,13 @@
 import React from "react"
-import { distributionTypeIcons, distributions } from "@/data/distributionData"
+import { distributionTypeIcons, distributions } from "@/data/testData/distributionData"
 import { DISTRIBUTION, DISTRIBUTION_TYPE } from "@/data/types"
 import { Card, CardContent } from "@/components/ui/card"
 import { IconText } from "@/components/ui/icons"
 import { Text } from "@/components/ui/typography"
+import { DataTable } from "@/components/ui/data-table"
+import { client_appointment_column, volunteer_shift_column } from "@/data/columns"
+import { clientAppointmentData } from "@/data/testData/clientAppointmentsData"
+import { volunteerShiftData } from "@/data/testData/volunteerShiftData"
 
 export default async function Distribution({params}: {params: Promise<{ slug: string }>}) {
     const distributionID = (await params).slug
@@ -13,7 +17,10 @@ export default async function Distribution({params}: {params: Promise<{ slug: st
     return (
         <section className="h-[calc(100vh-8rem-96px)] overflow-y-scroll flex flex-col px-10 py-8 gap-4 relative">
             <DistributionQuickInfoCard dist={distribution}/>
-        
+            <div className="flex gap-10">
+                <DataTable columns={client_appointment_column} data={clientAppointmentData}/>
+                <DataTable columns={volunteer_shift_column} data={volunteerShiftData}/>
+            </div>
         </section>
     )
 }
@@ -75,7 +82,7 @@ function DistributionQuickInfoCard({dist}: {dist: DISTRIBUTION}) {
                             </Text>
                         </IconText>
                     </div>
-                </div>
+                </div> 
             </CardContent>
         </Card>
     )

@@ -5,7 +5,7 @@ import { Heading } from "@/components/ui/typography"
 import Link from "next/link";
 import { IconButton, Icons } from "@/components/ui/icons";
 import { notFound, usePathname } from 'next/navigation'
-import { distributions } from "@/data/distributionData";
+import { distributions } from "@/data/testData/distributionData";
 import { DateFormat } from "@/components/utility/dateFormat";
 import { CTA } from "@/components/ui/button";
 
@@ -66,7 +66,7 @@ export default function DistributionsLayout({
                 </Link>
               : 
               <div className="flex gap-5 items-center">
-                  <CTA redirect="/" style="light-big">
+                  <CTA redirect={`${pathname}/edit`} style="light-big">
                     <Heading size="h2" styles={{color: "text-gray-950", weight: "font-semibold"}}>
                       Start Distribution
                     </Heading>
