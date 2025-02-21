@@ -5,7 +5,7 @@ import { Heading, Text } from "@/components/ui/typography"
 import { IconButton, Icons } from "@/components/ui/icons"
 import { quickActionLinks } from "@/data/links";
 import { Card, CardContent, CardFooter, ImpactCard } from '@/components/ui/card';
-import { dashboardPreview, alertsPreview } from "@/data/previewData"
+import { dashboardPreview, alertsPreview } from "@/data/testData/previewData"
 import { CTA } from '@/components/ui/button';
 import { ALERT_PREVIEW } from '@/data/types';
 import { useState } from 'react';

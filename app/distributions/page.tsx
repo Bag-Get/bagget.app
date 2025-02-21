@@ -1,5 +1,5 @@
 import React from "react";
-import { distributionTypeIcons, distributions } from "@/data/distributionData"
+import { distributionTypeIcons, distributions } from "@/data/testData/distributionData"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heading, Text } from "@/components/ui/typography";
 import { IconText, Icons } from "@/components/ui/icons";
@@ -13,7 +13,7 @@ import { DateFormat } from "@/components/utility/dateFormat"
 export default function Distributions() {
 
     return (
-        <section className="h-[calc(100vh-8rem-96px)] overflow-y-scroll flex flex-col px-10 py-8 gap-4 relative">
+        <section className="h-[calc(100vh-8rem)] overflow-y-scroll flex flex-col px-10 py-10 gap-4 relative">
             <div className="w-96 flex gap-4">
               <Input type="search" placeholder="Find Distribution" />
               <Button type="submit" className="bg-lime-100 hover:bg-emerald-100"><Icons name="Search" color="#030712"/></Button>

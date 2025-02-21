@@ -1,4 +1,4 @@
-import { ALERT_PREVIEW, IMPACT_PREVIEW } from "@/data/types"
+import { ALERT_PREVIEW, IMPACT_PREVIEW } from "../types"
 
 export const dashboardPreview: IMPACT_PREVIEW[] = [
     {

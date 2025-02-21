@@ -1,5 +1,5 @@
 import React from "react";
-import { distributionTypeIcons, distributions } from "@/data/distributionData"
+import { distributionTypeIcons, distributions } from "@/data/testData/distributionData"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heading, Text } from "@/components/ui/typography";
 import { IconText, Icons } from "@/components/ui/icons";

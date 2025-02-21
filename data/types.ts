@@ -146,3 +146,27 @@ export interface DISTRIBUTION {
     // users
     // volunteers
 }
+
+// Clients
+export type CLIENT_APPOINTMENT = {
+    id: string,
+    clientID: string,
+    appointmentID: string,
+    name: string,
+    time: Date,
+    householdSize: number,
+    additionalPickup: boolean
+    pickups?: CLIENT_APPOINTMENT[]
+}
+
+type VOLUNTEER_SHIFT_STATUS = 'arrived' | 'canceled' | 'checked-out'
+
+export type VOLUNTEER_SHIFT = {
+    id: string,
+    volunteerID: string,
+    appointmentID: string,
+    name: string,
+    check_in?: Date,
+    check_out?: Date,
+    status: VOLUNTEER_SHIFT_STATUS
+}
