@@ -16,6 +16,7 @@ export default function DistributionsLayout({
   children: React.ReactNode;
 }>) {
 
+  // TODO: refractor to use useRouter();
   const pathname = usePathname()
   const pathID = pathname.split("/")
   const distributionID = pathID[pathID.length - 1]

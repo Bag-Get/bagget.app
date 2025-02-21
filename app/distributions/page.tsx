@@ -8,6 +8,8 @@ import { DISTRIBUTION_TYPE } from "@/data/types";
 import { Input } from "@/components/ui/input";
 import { DateFormat } from "@/components/utility/dateFormat"
 
+// TODO: make sure the user has authentication to visit this page and the edit page
+
 export default function Distributions() {
 
     return (
@@ -112,7 +114,7 @@ function DistributionCard() {
                     <CardFooter>
                         <div className="flex gap-5">
                             {/* TODO: update CTA to be a link & have alt styles */}
-                            <CTA redirect={`/distributions/${distribution.id}`} style="d_b_dark">
+                            <CTA redirect={`/distributions/${distribution.id}/distribution/`} style="d_b_dark">
                                 <Text size='lg' styles={{weight: 'font-medium', color: 'text-lime-100'}}>
                                     Details
                                 </Text>

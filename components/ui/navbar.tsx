@@ -8,7 +8,8 @@ import { IconText } from "@/components/ui/icons"
 import { operationLinks, peopleLinks, generalLinks } from "@/data/links"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-
+// TODO: make sure the highlight is persistence if it exists in the url
+// TODO: remove that search bar
 export function NavBar() {
 
     const path: string = usePathname()
