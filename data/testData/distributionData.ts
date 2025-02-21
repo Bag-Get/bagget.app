@@ -1,4 +1,4 @@
-import { DISTRIBUTION, DISTRIBUTION_TYPE_ICONS } from "./types";
+import { DISTRIBUTION, DISTRIBUTION_TYPE_ICONS } from "../types";
 
 export const distributionTypeIcons: DISTRIBUTION_TYPE_ICONS = {
     Mobile: "Car",
