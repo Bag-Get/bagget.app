@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Icons } from "@/components/ui/icons"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button";
 import { NavBar } from "../components/ui/navbar";
 
 const geistSans = localFont({
@@ -62,15 +59,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="w-screen grid grid-cols-[300px_auto] grid-rows-[96px_auto]">
+        <div className="w-screen grid grid-cols-[300px_auto]">
           <NavBar />
-          <div className="bg-emerald-900 p-6 flex justify-end items-center gap-6 h-24">
-            <div className="w-96 flex gap-4">
-              <Input type="search" placeholder="Navigate Bag/Get" />
-              <Button type="submit" className="bg-lime-100 hover:bg-emerald-100"><Icons name="Search" color="#030712"/></Button>
-            </div>
-            <Button type="submit" className="bg-lime-100 hover:bg-emerald-100"><Icons name="Bell" color="#030712"/></Button>
-          </div>
           {children}
         </div>
       </body>
